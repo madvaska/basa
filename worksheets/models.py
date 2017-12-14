@@ -7,6 +7,8 @@ from datetime import datetime
 class WorksheetFile(models.Model):
     original = models.FileField(upload_to='uploads')
     fileName = models.CharField(max_length=255, unique = True)
+    def __str__(self):
+        return self.fileName
 
 class Worksheet(models.Model):
     partner = models.ForeignKey(Partner)

@@ -13,10 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-from . import views
+from django.conf.urls import include,url
+from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', views.sheet_file, name='Ввод анкеты'),
-    url(r'^1/$', views.sheet_file_form, name='Ввод анкеты'),
+    url(r'^admin/', admin.site.urls),
+    url(r'', include('worksheets.urls')),
 ]
