@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import WorksheetFile
 from .forms import WFForm
+import xlrd
 #from . import views
 
 # Create your views here.
@@ -25,3 +26,9 @@ def sheet_file_form(request):
     else:
         form = WFForm()
     return render(request, 'worksheets/wfform.html', {'form':form})
+
+def readSheetFile(filename,sheetname=0):
+    print('Открываем файл')
+    book = xlrd.open_workbook(filename)
+    sheet = book.sheet_by_index(sheetname)
+    return sheet
