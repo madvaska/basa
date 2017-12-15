@@ -17,6 +17,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.sheet_file, name='Ввод анкеты'),
+    url(r'^$', views.sheet_file, name='sheet_file'),
     url(r'^1/$', views.sheet_file_form, name='Ввод анкеты'),
 ]
