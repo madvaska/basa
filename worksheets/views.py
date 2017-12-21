@@ -55,7 +55,7 @@ def searchTypeOfWork(cellData):
 
 
 def parseRow(rowValues=[],columnNum=2):
-    print('Разбираем строку '+str(rowValues)]
+    print('Разбираем строку '+str(rowValues))
     rowData = []
     for cell in rowValues:
         data = parseCellToStr(cell)
@@ -76,7 +76,7 @@ def isYesRow(rowData=[],yesColumn=3):
     print('Проверяем, что это - YES')
     if(len(rowData) < yesColumn):
         return False
-    if(rowData[yesColumn].strip().lower()=u"да"):
+    if(rowData[yesColumn].strip().lower()=="да"):
         return True
     return False
 
